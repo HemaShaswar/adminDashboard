@@ -1,29 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *, *::before, *::after {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) 4fr;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+        'sidebar header'
+        'sidebar main'
+    ;
+    gap: 16px;
 }
 
 header {
-    background-color: lightblue;
+    background-color: white;
     display: flex;
     flex-direction: column;
     padding: 16px 32px;
     gap: 16px;
+    grid-area: header;
 }
 .top {
     display: flex;
     justify-content: space-between;
 }
+
+.invert {
+    filter: invert(100%);
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+}
+
 .user {
     display: flex;
     gap: 16px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
 .profile {
     display: flex;
+    gap: 16px;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
+}
+
+.sidebar {
+    padding: 32px;
+    background-color: aquamarine;
+    grid-area: sidebar;
+
+}
+
+.sidebar > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main {
+    grid-area: main;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+
+.button-24 {
+  background: rgb(66, 255, 208);
+  border: 1px solid rgb(66, 255, 208);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: black;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+input {
+    flex: 1;
+    border-radius: 16px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 0;
 }
